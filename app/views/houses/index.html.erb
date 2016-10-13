@@ -4,6 +4,7 @@
   <% @houses.each do |house| %>
     <li>
         <%= house.name %>
+        <%= link_to "(+)", house_path(house) %>
     </li>
   <% end %>
 </ul>

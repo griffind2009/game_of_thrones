@@ -8,9 +8,9 @@
 House.destroy_all
 Character.destroy_all
 
-  stark = House.create(name: "Stark")
-  lannister = House.create(name: "Lannister")
-  targaryen = House.create(name: "Targaryen")
+  stark = House.create(name: "Stark", img_url: "http://img.wallpaperfolder.com/f/63AAF8C2B67C/house-stark-game-thrones-got.jpg")
+  lannister = House.create(name: "Lannister", img_url: "http://i.imgur.com/FYELsu6.png")
+  targaryen = House.create(name: "Targaryen", img_url: "http://orig14.deviantart.net/89f7/f/2014/128/5/1/house_targaryen_symbol_by_yurtigo-d7hmo3k.png")
 
 john = Character.create!(name: "John Snow", img_url: "https://thoughtcatalog.files.wordpress.com/2016/04/jon-snow.jpg", house: stark)
 daenerys = Character.create!(name: "Daenerys", img_url: "http://static.srcdn.com/wp-content/uploads/daenerys.jpg", house: targaryen)

@@ -13,7 +13,7 @@ def show
 end
 
 def create
-  @character = Post.create(character_params)
+  @character = Character.create(character_params)
   redirect_to characters_path
 end
 
@@ -29,12 +29,16 @@ end
 
 def destroy
   @character = Character.find(params[:id])
+  if @character.user == current_user
   @character.destroy
+else
+  flash[:alert] = "You cannot delete what you did not create"
+end
   redirect_to :back
 end
 
 private
 def character_params
-  params.require(:character).permit(:name, :house)
+  params.require(:character).permit(:name, :house, :img_url)
 end
 end

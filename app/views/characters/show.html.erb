@@ -1,5 +1,6 @@
 <h1><%= @character.name %></h1>
 <h2><%= @character.house.name %></h2>
 <div class="character">
-  <%= image_tag("character.img_url") %>
+  <img src="<%=@character.img_url%>" />
+  <%= link_to 'Back', redirect_to :back %>
 </div>
