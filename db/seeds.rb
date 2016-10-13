@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+House.destroy_all
+Character.destroy_all
+
+  stark = House.create(name: "Stark")
+  lannister = House.create(name: "Lannister")
+  targaryen = House.create(name: "Targaryen")
+
+john = Character.create!(name: "John Snow", img_url: "https://thoughtcatalog.files.wordpress.com/2016/04/jon-snow.jpg", house: stark)
+daenerys = Character.create!(name: "Daenerys", img_url: "http://static.srcdn.com/wp-content/uploads/daenerys.jpg", house: targaryen)
+jaime = Character.create!(name: "Jaime",  img_url: "http://img1.looper.com/img/gallery/why-game-of-thrones-jaime-lannister-is-more-important-than-we-realized/intro.jpg", house: lannister)
