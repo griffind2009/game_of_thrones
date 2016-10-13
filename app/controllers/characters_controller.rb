@@ -5,6 +5,8 @@ def index
 end
 
 def new
+  # @house = House.find(params[:house_id])
+  # @character = @house.characters.new
   @character = Character.new
 end
 
@@ -13,7 +15,8 @@ def show
 end
 
 def create
-  @character = Character.create(character_params)
+  @house = House.find(params[:house_id])
+  @character = @house.characters.create(character_params)
   redirect_to characters_path
 end
 
@@ -39,6 +42,6 @@ end
 
 private
 def character_params
-  params.require(:character).permit(:name, :house, :img_url)
+  params.require(:character).permit(:name, :house, :img_url, :house_id)
 end
 end
